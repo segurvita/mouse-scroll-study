@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class MouseScrollStudy : MonoBehaviour
+public class MouseScrollDeltaStudy : MonoBehaviour
 {
     /// <summary>テキストボックス</summary>
-    public Text uiTextMouseScrollDelta;
+    public Text uiCurrentValue;
     
     /// <summary>テキストボックス</summary>
     public Text uiTextSum;
@@ -32,7 +32,7 @@ public class MouseScrollStudy : MonoBehaviour
         _sum += currentValue;
 
         // 入力値を表示する。
-        uiTextMouseScrollDelta.text = currentValue.ToString();
+        uiCurrentValue.text = currentValue.ToString();
         
         // 合計値を表示する。
         uiTextSum.text = _sum.ToString();
