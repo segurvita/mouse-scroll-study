@@ -45,7 +45,7 @@ namespace MouseScrollCoordinator
             float current = Input.GetAxis("Mouse ScrollWheel");
             
             // 0ならここで終わり
-            if (current == 0.0 || _speedMeasurer.Speed == 0)
+            if (current == 0 || _speedMeasurer.MinSpeed == 0)
             {
                 return;
             }
@@ -54,13 +54,13 @@ namespace MouseScrollCoordinator
             Current = Mathf.Abs(current);
 
             // 最小値を更新する。
-            Min = Mathf.Min(Mathf.Abs(current), Min);
+            Min = Mathf.Min(Current, Min);
 
             // 最大値を更新する。
-            Max = Mathf.Max(Mathf.Abs(current), Max);
+            Max = Mathf.Max(Current, Max);
 
             // 現在値/速度を更新する。
-            CurrentPerSpeed = Mathf.Abs(current) / _speedMeasurer.Speed;
+            CurrentPerSpeed = Current / _speedMeasurer.MinSpeed;
 
             // 最小値/速度を更新する。
             MinPerSpeed = Mathf.Min(CurrentPerSpeed, MinPerSpeed);

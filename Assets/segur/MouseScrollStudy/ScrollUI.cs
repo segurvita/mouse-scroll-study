@@ -10,6 +10,9 @@ namespace MouseScrollCoordinator
     {
         public Slider uiSliderSpeed;
         public Text uiTextSpeed;
+        
+        public Slider uiSliderMinSpeed;
+        public Text uiTextMinSpeed;
 
         public Slider uiSliderCurrent;
         public Text uiTextCurrent;
@@ -19,6 +22,9 @@ namespace MouseScrollCoordinator
 
         public Slider uiSliderMax;
         public Text uiTextMax;
+
+        public Slider uiSliderSpeedPerSpeed;
+        public Text uiTextSpeedPerSpeed;
 
         public Slider uiSliderCurrentPerSpeed;
         public Text uiTextCurrentPerSpeed;
@@ -48,6 +54,9 @@ namespace MouseScrollCoordinator
         {
             uiSliderSpeed.value = _speedMeasurer.Speed;
             uiTextSpeed.text = _speedMeasurer.Speed.ToString();
+            
+            uiSliderMinSpeed.value = _speedMeasurer.MinSpeed;
+            uiTextMinSpeed.text = _speedMeasurer.MinSpeed.ToString();
 
             uiSliderCurrent.value = _minMaxMeasurer.Current;
             uiTextCurrent.text = _minMaxMeasurer.Current.ToString();
@@ -57,6 +66,9 @@ namespace MouseScrollCoordinator
 
             uiSliderMax.value = _minMaxMeasurer.Max;
             uiTextMax.text = _minMaxMeasurer.Max.ToString();
+            
+            uiSliderSpeedPerSpeed.value = _speedMeasurer.SpeedPerSpeed;
+            uiTextSpeedPerSpeed.text = _speedMeasurer.SpeedPerSpeed.ToString();
 
             uiSliderCurrentPerSpeed.value = _minMaxMeasurer.CurrentPerSpeed;
             uiTextCurrentPerSpeed.text = _minMaxMeasurer.CurrentPerSpeed.ToString();
